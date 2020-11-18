@@ -1,8 +1,22 @@
-let numberArray = new Array();
-  for(let i = 0; i < 10; i++){
-    numberArray.push(Math.floor(Math.random() * 1000));
-  }
-
-  numberArray.sort(function(a, b){return a-b});
-  console.log("Second highest number : "+numberArray[8]);
-  console.log("Second lowest number : "+numberArray[1]);
+let numArray = new Array();
+for(let i=0;i<10;i++){
+    let num = Math.floor(Math.random()*900)+100;
+    numArray.push(num);
+}
+console.log(numArray);
+let maxNum = 0;
+let minNum = 1000;
+let max2 = 0;
+let min2 = 1000;
+for(let element of numArray){ 
+    maxNum = Math.max(element,maxNum);
+    minNum = Math.min(element,minNum);
+}
+for(let element of numArray){
+    max2 = (element<maxNum&&element>max2)?element:max2;
+    min2 = (element>minNum&&element<min2)?element:min2;
+}
+console.log("Largest : "+maxNum);
+console.log("Second largest : "+max2);
+console.log("Smallest : "+minNum);
+console.log("Second smallest : "+min2);
